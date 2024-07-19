@@ -5,7 +5,7 @@ Welcome to the Mlimi repository! Mlimi is an AI-powered App, designed to empower
 ## Structure
 This repository is structured as follows:
 - `backend/`: This directory contains the backend code of the Mlimi platform, including the API endpoints, vector databases, and logic implemented.
-- `frontend/`: Here, you will find the frontend code for the Mlimi platform implement using NextJS which is a Javascript Framework and Tailwind to design the user interface. 
+- `frontend/`: Here, you will find the frontend code for the Mlimi platform implement using NextJS which is a Javascript Framework,Tailwind and shadcn to design the user interface. 
 - `models/`: This directory contains the trained Generative AI models used by Mlimi Platform to give recommendations to our userd
 
 ## Purpose
