@@ -8,7 +8,7 @@ app = FastAPI()
 
 app.include_router(item_router, prefix="/api/v1/items", tags=["DB Test"])
 
-app.include_router(user_router, prefix="/api/v1/users", tags=["User"])
+app.include_router(user_router, prefix="/api/v1/users", tags=["Users"])
 
 app.include_router(auth_router, prefix="/api/v1/auth", tags=["Auth"])
 
