@@ -1,6 +1,6 @@
 # MLIMI -
 
-Welcome to the Mlimi repository! Mlimi is an AI-powered app designed to empower small-scale farmers in Africa by providing essential agricultural information and tools to combat food insecurity.
+Welcome to the Mlimi repository! Mlimi is an AI-powered App, designed to empower small-scale farmers in Africa by providing essential agricultural information and tools to combat food insecurity.
 
 ## Structure
 This repository is structured as follows:
