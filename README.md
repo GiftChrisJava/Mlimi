@@ -12,4 +12,4 @@ This repository is structured as follows:
 This repository serves as a collaborative environment for developing and enhancing the Mlimi platform. By keeping it publicly accessible, we encourage community involvement, enabling developers, contributors, and users to examine the codebase, report issues, and propose improvements.
 
 ## Solution
-Mlimi leverages the integration 
+Mlimi leverages the integration of OpenAI models
