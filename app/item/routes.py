@@ -8,7 +8,7 @@ item_router = APIRouter()
 
 
 # Get Request Method
-@item_router.get("/")
+@item_router.get("")
 async def get_items():
     try:
         items = list_items(item_table.find())
@@ -19,7 +19,7 @@ async def get_items():
 
 
 # Post Request Method
-@item_router.post("/")
+@item_router.post("")
 async def post_item(item: Item):
     try:
         item_dict = dict(item)
