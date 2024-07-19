@@ -6,7 +6,7 @@ from gpt.routes import crop_recommendation_router
 
 app = FastAPI()
 
-app.include_router(item_router, prefix="/api/v1/items")
+app.include_router(item_router, prefix="/api/v1/items(test)")
 
 app.include_router(user_router, prefix="/api/v1/users")
 

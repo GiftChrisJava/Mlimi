@@ -3,7 +3,6 @@ def individual_item(item) -> dict:
         "id": str(item["_id"]),
         "name": item["name"],
         "description": item["description"],
-        "complete": item["complete"]
     }
 
 

@@ -13,6 +13,7 @@ client = MongoClient(uri, server_api=ServerApi('1'))
 
 db = client.mlimi_db
 
+# database tables
 item_table = db["items"]
 
 recommendation_table = db["recommendations"]
