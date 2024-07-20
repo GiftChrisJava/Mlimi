@@ -11,9 +11,9 @@ export default function LeftNavBar({ selectedOption, setSelectedOption }) {
   ];
 
   return (
-    <nav className="bg-gray-100 text-gray-800 w-sm max-h-screen p-4 rounded-md shadow-2xl">
-      <Link className="font-bold text-2xl text-gray-900 mb-2" href="/options">{"Mlimi App"}</Link>
-      <hr className="mb-4" />
+    <nav className="bg-gray-100 text-gray-800 w-64 h-full p-4 shadow-2xl flex flex-col">
+      <Link className="font-bold text-2xl text-gray-900 mb-6" href="/options">{"Mlimi App"}</Link>
+      <hr className="text-xl" />
 
       <ul className="text-xl px-6">
         {menuItems.map((item) => (
