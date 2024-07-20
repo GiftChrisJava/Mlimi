@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --tw-bg-opacity: 1;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --tw-bg-opacity: 1;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .max-container {
+    max-width: 980px;
+    margin: 0 auto;
+  }
+
+  .min-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+body {
+  background-color: #f0f0f0;
+}
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
