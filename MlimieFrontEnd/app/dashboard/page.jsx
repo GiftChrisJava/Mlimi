@@ -11,14 +11,12 @@ import SignInForm from '../_components/SignInForm';
 import CropMonitoring from '../_components/CropMonitoring';
 import RightSideNavBar from '../_components/RightSidebar';
 import SignUpForm from '../_components/Register';
-import { Menu, X } from 'lucide-react';
 
 export default function Home() {
   const [weatherData, setWeatherData] = useState(null);
   const [selectedOption, setSelectedOption] = useState('personal');
   const [formData, setFormData] = useState(null);
   const [isSignIn, setIsSignIn] = useState(true); // State to toggle between SignIn and SignUp
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to toggle menu
   const router = useRouter();
   const searchParams = useSearchParams();
   const city = searchParams.get('city') || "blantyre";
@@ -39,22 +37,9 @@ export default function Home() {
     setFormData(null);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <div className="flex flex-col lg:flex-row min-h-screen">
-      <div className={`lg:w-64 w-full ${isMenuOpen ? 'block' : 'hidden'} lg:block`}>
-        <LeftNavBar selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
-      </div>
-      
-      <div className="lg:hidden w-full p-4 flex justify-between items-center bg-gray-100">
-        <span className="font-bold text-xl">Mlimi App</span>
-        <button onClick={toggleMenu} className="text-2xl">
-          {isMenuOpen ? <X /> : <Menu />}
-        </button>
-      </div>
+    <div className="flex">
+      <LeftNavBar selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
       
       <div className="flex-1 p-4 flex justify-center items-center">
         {selectedOption === 'crop' && !formData && <CropRecommendationForm onSave={handleFormSave} />}
@@ -68,7 +53,7 @@ export default function Home() {
         {/* Render other forms as needed */}
       </div>
 
-      <div className="lg:w-64 w-full lg:fixed lg:right-0 lg:top-0 lg:bottom-0 lg:overflow-auto hidden lg:block">
+      <div className="w-54 bg-gray-100 p-4 fixed right-0 top-0 bottom-0 overflow-auto">
         <RightSideNavBar />
       </div>
     </div>
