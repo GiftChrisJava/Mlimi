@@ -1,10 +1,12 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Depends
 from item.model import Item, ItemResponse
 from config.database import item_table
 from item.schemas import list_items
+from config.security import get_current_user, oauth2_scheme
 from bson import ObjectId
 
-item_router = APIRouter()
+item_router = APIRouter(responses={404: {"description": "Not found"}},
+                        dependencies=[Depends(oauth2_scheme), Depends(get_current_user)])
 
 
 # Get Request Method
