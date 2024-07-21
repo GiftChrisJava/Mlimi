@@ -6,6 +6,24 @@ from app.gpt.routes import crop_recommendation_router
 
 app = FastAPI()
 
+origins = [
+    "http://localhost.tiangolo.com",
+    "https://localhost.tiangolo.com",
+    "http://localhost",
+    "http://localhost:8080",
+  "http://https://dashboard.render.com",
+  "http://localhost:3003",
+    "http://localhost:3000"
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(item_router, prefix="/api/v1/auth/items", tags=["DB Test"])
 
 app.include_router(user_router, prefix="/api/v1/users", tags=["Users"])
