@@ -6,8 +6,8 @@ from passlib.context import CryptContext
 import base64
 from datetime import datetime, timedelta
 # from pymongo import MongoClient
-from config.database import users_table, token_table
-from config.settings import JWT_ALGORITHM, JWT_SECRET
+from app.config.database import users_table, token_table
+from app.config.settings import JWT_ALGORITHM, JWT_SECRET
 
 SPECIAL_CHARACTERS = ['@', '#', '$', '%',
                       '=', ':', '?', '.', '/', '|', '~', '>']
