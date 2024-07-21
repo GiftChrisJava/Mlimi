@@ -1,8 +1,8 @@
 
 from fastapi import FastAPI
-from item.routes import item_router
-from user.routes import user_router, auth_router, guest_router
-from gpt.routes import crop_recommendation_router
+from app.item.routes import item_router
+from app.user.routes import user_router, auth_router, guest_router
+from app.gpt.routes import crop_recommendation_router
 
 app = FastAPI()
 
