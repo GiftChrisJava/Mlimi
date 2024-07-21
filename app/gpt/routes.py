@@ -1,7 +1,7 @@
 
 from fastapi import APIRouter
-from gpt.models import CropRecommendation
-from gpt.services import recommend_crops
+from app.gpt.models import CropRecommendation
+from app.gpt.services import recommend_crops
 
 crop_recommendation_router = APIRouter()
 
