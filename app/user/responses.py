@@ -23,7 +23,6 @@ class UserResponse(BaseResponse):
     created_at: Union[str, None, datetime] = None
     verified_at: Union[str, None, datetime] = None
     updated_at: Union[str, None, datetime] = None
-    
 
 
 class LoginResponse(BaseModel):
