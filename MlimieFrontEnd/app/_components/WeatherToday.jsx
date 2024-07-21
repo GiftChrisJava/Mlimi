@@ -1,6 +1,35 @@
+"use client";
+
+import { useState, useEffect } from 'react';
 import { Thermometer, Wind, Droplet, Cloud } from 'lucide-react';
 
-export default function WeatherToday({ weatherData, city }) {
+export default function WeatherToday({ city }) {
+  const [weatherData, setWeatherData] = useState(null);
+
+  useEffect(() => {
+    // Dummy data for now
+    const fetchWeatherData = async () => {
+      const dummyData = {
+        main: {
+          temp: 86, // Fahrenheit
+          feels_like: 88,
+          humidity: 70
+        },
+        wind: {
+          speed: 5 // m/s
+        },
+        weather: [
+          {
+            description: 'clear sky'
+          }
+        ]
+      };
+      setWeatherData(dummyData);
+    };
+
+    fetchWeatherData();
+  }, [city]);
+
   if (!weatherData) {
     return <div>Loading...</div>;
   }
@@ -43,47 +72,47 @@ export default function WeatherToday({ weatherData, city }) {
       <h1 className="text-xl mb-4 font-semibold">Current Weather</h1>
       <h3 className="text-md mb-4 font-semibold text-green-700">{city}</h3>
 
-      <div className="bg-white shadow-lg rounded-lg p-4 w-1/2">
-        <div className="flex items-center mb-4">
-          <Thermometer className="w-6 h-6 text-green-700 mr-2" />
-          <div>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full max-w-3xl">
+        <div className="bg-white shadow-lg rounded-lg p-4">
+          <div className="flex items-center mb-2">
+            <Thermometer className="w-6 h-6 text-green-700 mr-2" />
             <div className="text-lg font-medium">Temperature</div>
-            <div className="text-gray-700">{tempCelsius.toFixed(1)}°C</div>
           </div>
+          <div className="text-gray-700 text-lg">{tempCelsius.toFixed(1)}°C</div>
         </div>
-        <div className="flex items-center mb-4">
-          <Thermometer className="w-6 h-6 text-green-700 mr-2" />
-          <div>
+        <div className="bg-white shadow-lg rounded-lg p-4">
+          <div className="flex items-center mb-2">
+            <Thermometer className="w-6 h-6 text-green-700 mr-2" />
             <div className="text-lg font-medium">Feels Like</div>
-            <div className="text-gray-700">{feelsLikeCelsius.toFixed(1)}°C</div>
           </div>
+          <div className="text-gray-700 text-lg">{feelsLikeCelsius.toFixed(1)}°C</div>
         </div>
-        <div className="flex items-center mb-4">
-          <Droplet className="w-6 h-6 text-green-700 mr-2" />
-          <div>
+        <div className="bg-white shadow-lg rounded-lg p-4">
+          <div className="flex items-center mb-2">
+            <Droplet className="w-6 h-6 text-green-700 mr-2" />
             <div className="text-lg font-medium">Humidity</div>
-            <div className="text-gray-700">{main.humidity}%</div>
           </div>
+          <div className="text-gray-700 text-lg">{main.humidity}%</div>
         </div>
-        <div className="flex items-center mb-4">
-          <Wind className="w-6 h-6 text-green-700 mr-2" />
-          <div>
+        <div className="bg-white shadow-lg rounded-lg p-4">
+          <div className="flex items-center mb-2">
+            <Wind className="w-6 h-6 text-green-700 mr-2" />
             <div className="text-lg font-medium">Wind Speed</div>
-            <div className="text-gray-700">{wind.speed} m/s</div>
           </div>
+          <div className="text-gray-700 text-lg">{wind.speed} m/s</div>
         </div>
         {weather.length > 0 && (
-          <div className="flex items-center">
-            <Cloud className="w-6 h-6 text-green-700 mr-2" />
-            <div>
+          <div className="bg-white shadow-lg rounded-lg p-4">
+            <div className="flex items-center mb-2">
+              <Cloud className="w-6 h-6 text-green-700 mr-2" />
               <div className="text-lg font-medium">Weather</div>
-              <div className="text-gray-700 capitalize">{weather[0].description}</div>
             </div>
+            <div className="text-gray-700 text-lg capitalize">{weather[0].description}</div>
           </div>
         )}
       </div>
 
-      <div className="bg-green-100 shadow-lg rounded-lg p-4 w-1/2 mt-4">
+      <div className="bg-green-100 shadow-lg rounded-lg p-4 w-full max-w-3xl mt-4">
         <h2 className="text-lg font-medium">Weather Advice</h2>
         <p className="text-gray-700">{getWeatherAdvice()}</p>
       </div>

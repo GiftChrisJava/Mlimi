@@ -1,11 +1,20 @@
 "use client";
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Chart from 'chart.js/auto';
 
 export default function CropRecommendationDashboard({ formData, city, onReset }) {
   const chartRef = useRef(null); // Reference to keep track of the chart instance
   const canvasRef = useRef(null); // Reference to the canvas element
+  const [cropData, setCropData] = useState({
+    labels: ['Maize', 'Wheat', 'Rice'],
+    suitability: [85, 70, 90], // Dummy data
+    recommendations: [
+      "Maize: Suitable due to its tolerance to a wide range of soil pH and high adaptability to various moisture levels. Great for areas with moderate to high temperatures.",
+      "Wheat: Prefers well-drained soils with moderate pH. It is moderately suitable in areas with consistent moisture and temperatures ranging from cool to warm.",
+      "Rice: Thrives in areas with high moisture and slightly acidic to neutral pH. Best suited for warm climates with plenty of water."
+    ]
+  });
 
   useEffect(() => {
     const ctx = canvasRef.current.getContext('2d');
@@ -19,10 +28,10 @@ export default function CropRecommendationDashboard({ formData, city, onReset })
     chartRef.current = new Chart(ctx, {
       type: 'bar',
       data: {
-        labels: ['Maize', 'Wheat', 'Rice'],
+        labels: cropData.labels,
         datasets: [{
           label: 'Suitability',
-          data: [85, 70, 90], // Dummy data
+          data: cropData.suitability,
           backgroundColor: [
             'rgba(75, 192, 192, 0.2)',
             'rgba(255, 159, 64, 0.2)',
@@ -53,7 +62,7 @@ export default function CropRecommendationDashboard({ formData, city, onReset })
         chartRef.current.destroy();
       }
     };
-  }, [formData, city]); // Recreate chart when formData or city changes
+  }, [cropData]); // Recreate chart when cropData changes
 
   return (
     <div className="flex items-center justify-center min-h-screen p-4 mr-[100px]">
@@ -77,15 +86,9 @@ export default function CropRecommendationDashboard({ formData, city, onReset })
         <div className="mb-4 pl-8">
           <h3 className="text-lg font-semibold">Recommended Crops:</h3>
           <ul className="list-disc -ml-5">
-            <li>
-              <strong>Maize</strong>: Suitable due to its tolerance to a wide range of soil pH and high adaptability to various moisture levels. Great for areas with moderate to high temperatures.
-            </li>
-            <li>
-              <strong>Wheat</strong>: Prefers well-drained soils with moderate pH. It is moderately suitable in areas with consistent moisture and temperatures ranging from cool to warm.
-            </li>
-            <li>
-              <strong>Rice</strong>: Thrives in areas with high moisture and slightly acidic to neutral pH. Best suited for warm climates with plenty of water.
-            </li>
+            {cropData.recommendations.map((recommendation, index) => (
+              <li key={index}><strong>{cropData.labels[index]}</strong>: {recommendation}</li>
+            ))}
           </ul>
         </div>
 

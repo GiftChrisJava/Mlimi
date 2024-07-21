@@ -1,6 +1,8 @@
+@import 'tailwindcss/tailwind.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 :root {
   --tw-bg-opacity: 1;
