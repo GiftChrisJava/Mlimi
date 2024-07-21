@@ -1,10 +1,10 @@
-from utils.string import unique_string
-from utils.email_context import FORGOT_PASSWORD, USER_VERIFY_ACCOUNT
-from user.email import (
+from app.utils.string import unique_string
+from app.utils.email_context import FORGOT_PASSWORD, USER_VERIFY_ACCOUNT
+from app.user.email import (
     send_account_activation_confirmation_email,
     send_account_verification_email, send_password_reset_email
 )
-from config.security import (
+from app.config.security import (
     generate_token, get_token_payload, hash_password,
     is_password_strong_enough, load_user, str_decode,
     str_encode, verify_password
@@ -13,10 +13,10 @@ from config.security import (
 from fastapi import HTTPException, BackgroundTasks
 import logging
 from datetime import datetime, timedelta
-from config.database import users_table, token_table
-from config.settings import JWT_ALGORITHM, JWT_SECRET
-from user.models import User, UserToken
-from user.responses import UserResponse
+from app.config.database import users_table, token_table
+from app.config.settings import JWT_ALGORITHM, JWT_SECRET
+from app.user.models import User, UserToken
+from app.user.responses import UserResponse
 from bson import ObjectId
 
 
