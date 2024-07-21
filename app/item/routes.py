@@ -1,6 +1,6 @@
 from fastapi import APIRouter, HTTPException, Depends
 from app.item.model import Item, ItemResponse
-from config.database import item_table
+from app.config.database import item_table
 from app.item.schemas import list_items
 from app.config.security import get_current_user, oauth2_scheme
 from bson import ObjectId
