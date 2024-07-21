@@ -2,11 +2,11 @@ from fastapi import APIRouter, HTTPException, BackgroundTasks, Depends, status, 
 from fastapi.responses import JSONResponse
 from fastapi.security import OAuth2PasswordRequestForm, OAuth2PasswordBearer
 
-from config.database import get_database
-from user.responses import UserResponse, LoginResponse
-from user.schemas import RegisterUserRequest, ResetRequest, VerifyUserRequest, EmailRequest, LoginRequest
-from user.services import create_user_account, activate_user_account, get_login_token, get_refresh_token, email_forgot_password_link, reset_user_password
-from config.security import get_current_user, oauth2_scheme
+from app.config.database import get_database
+from app.user.responses import UserResponse, LoginResponse
+from app.user.schemas import RegisterUserRequest, ResetRequest, VerifyUserRequest, EmailRequest, LoginRequest
+from app.user.services import create_user_account, activate_user_account, get_login_token, get_refresh_token, email_forgot_password_link, reset_user_password
+from app.config.security import get_current_user, oauth2_scheme
 # from user.model import User
 # from config.database import item_table
 # from user.schemas import list_items
