@@ -23,6 +23,9 @@ export default function CityCountryForm() {
       <h2 className="my-8 font-semibold text-xl">
         Select <span className="text-green-700">Your Location</span>
       </h2>
+      <h3 className="text-center italic text-md text-gray-700 my-4">
+  Provide your location to receive the weather forecast for your area
+</h3>
       <form 
         onSubmit={handleSubmit}
         className="max-w-md w-sm bg-white shadow-xl p-8 rounded-lg flex flex-col space-y-4"
