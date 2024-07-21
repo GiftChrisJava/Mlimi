@@ -17,3 +17,11 @@ db = client.mlimi_db
 item_table = db["items"]
 
 recommendation_table = db["recommendations"]
+
+users_table = db["users"]
+
+token_table = db["user_tokens"]
+
+
+def get_database():
+    return db
