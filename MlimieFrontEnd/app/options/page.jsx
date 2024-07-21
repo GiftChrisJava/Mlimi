@@ -1,4 +1,5 @@
 "use client";
+import store from 'store2';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
@@ -6,14 +7,15 @@ import {africanCountries, countryCities} from '../data/africanCountries';
 
 export default function CityCountryForm() {
   const [country, setCountry] = useState('');
-  const [city, setCity] = useState('');
+  let [city, setCity] = useState('');
   const router = useRouter();
 
   // Handle form submission
   const handleSubmit = (e) => {
+    city = store.set("city", city)
     e.preventDefault();
     // Redirect to the dashboard with query parameters
-    router.push(`/dashboard?country=${encodeURIComponent(country)}&city=${encodeURIComponent(city)}`);
+    router.push(`/dashboard`);
   };
 
   return (
