@@ -1,14 +1,69 @@
-// List of African countries
-const africanCountries = [
-    "Algeria", "Angola", "Benin", "Botswana", "Burkina Faso", "Burundi", "Cabo Verde", "Cameroon", 
-    "Central African Republic", "Chad", "Comoros", "Congo", "Democratic Republic of the Congo", 
-    "Djibouti", "Egypt", "Equatorial Guinea", "Eritrea", "Eswatini", "Ethiopia", "Gabon", "Gambia", 
-    "Ghana", "Guinea", "Guinea-Bissau", "Ivory Coast", "Kenya", "Lesotho", "Liberia", "Libya", 
-    "Madagascar", "Malawi", "Mali", "Mauritania", "Mauritius", "Morocco", "Mozambique", "Namibia", 
-    "Niger", "Nigeria", "Rwanda", "Sao Tome and Principe", "Senegal", "Seychelles", "Sierra Leone", 
-    "Somalia", "South Africa", "South Sudan", "Sudan", "Togo", "Tunisia", "Uganda", "United Republic of Tanzania", 
-    "Zambia", "Zimbabwe"
-  ];
-  
-  export default africanCountries;
-  
+//African countries
+export const africanCountries = [
+  'Algeria', 'Angola', 'Benin', 'Botswana', 'Burkina Faso', 'Burundi', 'Cabo Verde', 
+  'Cameroon', 'Central African Republic', 'Chad', 'Comoros', 'Congo (Congo-Brazzaville)', 
+  'Democratic Republic of the Congo', 'Djibouti', 'Egypt', 'Equatorial Guinea', 'Eritrea', 
+  'Eswatini (fmr. Swaziland)', 'Ethiopia', 'Gabon', 'Gambia', 'Ghana', 'Guinea', 'Guinea-Bissau', 
+  'Ivory Coast', 'Kenya', 'Lesotho', 'Liberia', 'Libya', 'Madagascar', 'Malawi', 'Mali', 
+  'Mauritania', 'Mauritius', 'Morocco', 'Mozambique', 'Namibia', 'Niger', 'Nigeria', 
+  'Rwanda', 'Sao Tome and Principe', 'Senegal', 'Seychelles', 'Sierra Leone', 'Somalia', 
+  'South Africa', 'South Sudan', 'Sudan', 'Tanzania', 'Togo', 'Tunisia', 'Uganda', 'Zambia', 
+  'Zimbabwe'
+];
+
+export const countryCities = {
+  Algeria: ['Adrar', 'Chlef', 'Laghouat', 'Oum El Bouaghi', 'Batna'],
+  Angola: ['Bengo', 'Benguela', 'Bie', 'Cabinda', 'Cuando Cubango'],
+  Benin: ['Alibori', 'Atakora', 'Atlantique', 'Borgou', 'Collines'],
+  Botswana: ['Central', 'Ghanzi', 'Kgalagadi', 'Kgatleng', 'Kweneng'],
+  'Burkina Faso': ['Balé', 'Bam', 'Banwa', 'Bazèga', 'Bougouriba'],
+  Burundi: ['Bubanza', 'Bujumbura Mairie', 'Bujumbura Rural', 'Bururi', 'Cankuzo'],
+  'Cabo Verde': ['Boa Vista', 'Brava', 'Maio', 'Sal', 'Santiago'],
+  Cameroon: ['Adamawa', 'Centre', 'East', 'Far North', 'Littoral'],
+  'Central African Republic': ['Bamingui-Bangoran', 'Basse-Kotto', 'Haute-Kotto', 'Haut-Mbomou', 'Kémo'],
+  Chad: ['Batha', 'Borkou', 'Chari-Baguirmi', 'Ennedi-Est', 'Ennedi-Ouest'],
+  Comoros: ['Anjouan', 'Grande Comore', 'Mohéli'],
+  'Congo (Congo-Brazzaville)': ['Bouenza', 'Brazzaville', 'Cuvette', 'Cuvette-Ouest', 'Kouilou'],
+  'Democratic Republic of the Congo': ['Bandundu', 'Bas-Congo', 'Équateur', 'Kasai-Occidental', 'Kasai-Oriental'],
+  Djibouti: ['Ali Sabieh', 'Arta', 'Dikhil', 'Djibouti', 'Obock'],
+  Egypt: ['Alexandria', 'Aswan', 'Asyut', 'Beheira', 'Beni Suef'],
+  'Equatorial Guinea': ['Annobón', 'Bioko Norte', 'Bioko Sur', 'Centro Sur', 'Kie-Ntem'],
+  Eritrea: ['Anseba', 'Debub', 'Debubawi Keyih Bahri', 'Gash-Barka', 'Maekel'],
+  'Eswatini (fmr. Swaziland)': ['Hhohho', 'Lubombo', 'Manzini', 'Shiselweni'],
+  Ethiopia: ['Addis Ababa', 'Afar', 'Amhara', 'Benishangul-Gumuz', 'Dire Dawa'],
+  Gabon: ['Estuaire', 'Haut-Ogooué', 'Moyen-Ogooué', 'Ngounié', 'Nyanga'],
+  Gambia: ['Banjul', 'Central River', 'Lower River', 'North Bank', 'Upper River'],
+  Ghana: ['Ahafo', 'Ashanti', 'Bono', 'Bono East', 'Central'],
+  Guinea: ['Beyla', 'Boffa', 'Boké', 'Coyah', 'Dabola'],
+  'Guinea-Bissau': ['Bafatá', 'Biombo', 'Bissau', 'Bolama', 'Cacheu'],
+  'Ivory Coast': ['Abidjan', 'Bas-Sassandra', 'Comoé', 'Denguélé', 'Gôh-Djiboua'],
+  Kenya: ['Baringo', 'Bomet', 'Bungoma', 'Busia', 'Elgeyo-Marakwet'],
+  Lesotho: ['Berea', 'Butha-Buthe', 'Leribe', 'Mafeteng', 'Maseru'],
+  Liberia: ['Bomi', 'Bong', 'Gbarpolu', 'Grand Bassa', 'Grand Cape Mount'],
+  Libya: ['Al Butnan', 'Al Jabal al Akhdar', 'Al Jabal al Gharbi', 'Al Jafara', 'Al Jufrah'],
+  Madagascar: ['Alaotra-Mangoro', 'Amoron’i Mania', 'Analamanga', 'Analanjirofo', 'Androy'],
+  Malawi: ['Balaka', 'Blantyre', 'Chikwawa', 'Chiradzulu', 'Chitipa'],
+  Mali: ['Bamako', 'Gao', 'Kayes', 'Kidal', 'Koulikoro'],
+  Mauritania: ['Adrar', 'Assaba', 'Brakna', 'Dakhlet Nouadhibou', 'Gorgol'],
+  Mauritius: ['Agalega Islands', 'Beau Bassin-Rose Hill', 'Curepipe', 'Flacq', 'Grand Port'],
+  Morocco: ['Agadir-Ida-Ou Tanane', 'Al Haouz', 'Al Hoceima', 'Aousserd', 'Assa-Zag'],
+  Mozambique: ['Cabo Delgado', 'Gaza', 'Inhambane', 'Manica', 'Maputo'],
+  Namibia: ['Erongo', 'Hardap', 'Karas', 'Kavango East', 'Kavango West'],
+  Niger: ['Agadez', 'Diffa', 'Dosso', 'Maradi', 'Niamey'],
+  Nigeria: ['Abia', 'Adamawa', 'Akwa Ibom', 'Anambra', 'Bauchi'],
+  Rwanda: ['Kigali', 'Eastern', 'Northern', 'Southern', 'Western'],
+  'Sao Tome and Principe': ['Agua Grande', 'Cantagalo', 'Caué', 'Lemba', 'Lobata'],
+  Senegal: ['Dakar', 'Diourbel', 'Fatick', 'Kaffrine', 'Kaolack'],
+  Seychelles: ['Anse aux Pins', 'Anse Boileau', 'Anse Etoile', 'Anse Royale', 'Baie Lazare'],
+  'Sierra Leone': ['Eastern', 'Northern', 'North Western', 'Southern', 'Western Area'],
+  Somalia: ['Awdal', 'Bakool', 'Banaadir', 'Bari', 'Bay'],
+  'South Africa': ['Eastern Cape', 'Free State', 'Gauteng', 'KwaZulu-Natal', 'Limpopo'],
+  'South Sudan': ['Central Equatoria', 'Eastern Equatoria', 'Jonglei', 'Lakes', 'Northern Bahr el Ghazal'],
+  Sudan: ['Al Jazirah', 'Al Qadarif', 'Blue Nile', 'Central Darfur', 'East Darfur'],
+  Tanzania: ['Arusha', 'Dar es Salaam', 'Dodoma', 'Geita', 'Iringa'],
+  Togo: ['Centrale', 'Kara', 'Maritime', 'Plateaux', 'Savanes'],
+  Tunisia: ['Ariana', 'Beja', 'Ben Arous', 'Bizerte', 'Gabes'],
+  Uganda: ['Abim', 'Adjumani', 'Amolatar', 'Amuria', 'Amuru'],
+  Zambia: ['Central', 'Copperbelt', 'Eastern', 'Luapula', 'Lusaka'],
+  Zimbabwe: ['Bulawayo', 'Harare', 'Manicaland', 'Mashonaland Central', 'Mashonaland East']
+};

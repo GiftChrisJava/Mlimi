@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@shadcn/ui": "^0.0.4",
     "aos": "^2.3.4",
     "chart.js": "^4.4.3",
     "lucide-react": "^0.411.0",

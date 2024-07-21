@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import africanCountries from '../data/africanCountries';
+import {africanCountries, countryCities} from '../data/africanCountries';
 
 export default function CityCountryForm() {
   const [country, setCountry] = useState('');
@@ -40,15 +40,18 @@ export default function CityCountryForm() {
           </select>
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700">City</label>
-          <input
-            type="text"
+          <label className="block text-gray-700">Select City</label>
+          <select
             value={city}
             onChange={(e) => setCity(e.target.value)}
             className="w-full px-3 py-2 border rounded"
-            placeholder="Enter your city"
             required
-          />
+          >
+            <option value="" disabled>Select a city</option>
+            {country && countryCities[country]?.map((city, index) => (
+              <option key={index} value={city}>{city}</option>
+            ))}
+          </select>
         </div>
         <button
           type="submit"
