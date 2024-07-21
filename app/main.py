@@ -17,3 +17,10 @@ app.include_router(auth_router, prefix="/api/v1/auth", tags=["Auth"])
 
 app.include_router(crop_recommendation_router,
                    prefix="/api/v1/recommendations", tags=["GPT"])
+
+
+
+
+
+if __name__ == '__main__':
+      uvicorn.run("main:app", host="0.0.0.0", port=port, reload=True)
