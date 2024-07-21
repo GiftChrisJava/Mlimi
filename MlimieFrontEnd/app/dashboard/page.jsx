@@ -11,6 +11,7 @@ import SignInForm from '../_components/SignInForm';
 import CropMonitoring from '../_components/CropMonitoring';
 import RightSideNavBar from '../_components/RightSidebar';
 import SignUpForm from '../_components/Register';
+import store from 'store2';
 
 export default function Home() {
   const [weatherData, setWeatherData] = useState(null);
@@ -18,16 +19,17 @@ export default function Home() {
   const [formData, setFormData] = useState(null);
   const [isSignIn, setIsSignIn] = useState(true); // State to toggle between SignIn and SignUp
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const city = searchParams.get('city') || "blantyre";
+  // const searchParams = useSearchParams();
+  let city = store.get("city");
 
   useEffect(() => {
     if (city) {
+      console.log("city is " +  city);
       fetchWeatherData(city).then(data => setWeatherData(data));
     }
   }, [city]);
 
-  if (!weatherData) return <div>Loading...</div>;
+  if (!weatherData) return <div> city value is {city} Loading...</div>;
 
   const handleFormSave = (data) => {
     setFormData(data);
