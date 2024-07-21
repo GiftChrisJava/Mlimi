@@ -1,5 +1,6 @@
 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from app.item.routes import item_router
 from app.user.routes import user_router, auth_router, guest_router
 from app.gpt.routes import crop_recommendation_router
