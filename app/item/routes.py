@@ -5,8 +5,7 @@ from item.schemas import list_items
 from config.security import get_current_user, oauth2_scheme
 from bson import ObjectId
 
-item_router = APIRouter(responses={404: {"description": "Not found"}},
-                        dependencies=[Depends(oauth2_scheme), Depends(get_current_user)])
+item_router = APIRouter(responses={404: {"description": "Not found"}})
 
 
 # Get Request Method
