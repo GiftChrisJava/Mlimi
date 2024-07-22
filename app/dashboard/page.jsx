@@ -27,16 +27,16 @@ export default function Home() {
     }
   }, [city]);
 
-  if (!weatherData) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="text-center">
-          <div>city value is {city}</div>
-          <Loader className="animate-spin" size={48} />
-        </div>
-      </div>
-    );
-  }
+  // if (!weatherData) {
+  //   return (
+  //     <div className="flex justify-center items-center h-screen">
+  //       <div className="text-center">
+  //         <div>city value is {city}</div>
+  //         <Loader className="animate-spin" size={48} />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 
   const handleFormSave = (data) => {
     setFormData(data);
