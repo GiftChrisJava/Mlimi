@@ -1,6 +1,5 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
 import { fetchWeatherData } from '../lib/fetchWeather';
 import LeftNavBar from '../_components/LeftNavBar';
 import WeatherToday from '../_components/WeatherToday';
@@ -19,7 +18,6 @@ export default function Home() {
   const [selectedOption, setSelectedOption] = useState('weather');
   const [formData, setFormData] = useState(null);
   const [isSignIn, setIsSignIn] = useState(true); // State to toggle between SignIn and SignUp
-  const router = useRouter();
   let city = store.get("city");
 
   useEffect(() => {

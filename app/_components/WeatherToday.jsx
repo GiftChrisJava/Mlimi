@@ -1,22 +1,15 @@
-"use client";
-
 import { useState, useEffect } from 'react';
 import { Thermometer, Wind, Droplet, Cloud } from 'lucide-react';
-import { fetchWeatherData, weeklyWeatherData } from '../lib/fetchWeather';
+import { fetchWeatherData } from '../lib/fetchWeather';
 
 export default function WeatherToday({ city }) {
   const [weatherData, setWeatherData] = useState(null);
-  const [weeklyWeatherData, setWeeklyWeatherData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const currentWeather = await fetchWeatherData(city);
         setWeatherData(currentWeather);
-        
-        const { coord } = currentWeather;
-        const weeklyWeather = await fetchWeeklyWeatherData(coord.lat, coord.lon);
-        setWeeklyWeatherData(weeklyWeather);
       } catch (error) {
         console.error('Error fetching weather data:', error);
       }
