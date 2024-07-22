@@ -1,3 +1,4 @@
+"use client"
 export const weeklyWeatherData = [
     { day: 'Monday', temperature: 22, icon: '☀️' },    // Sun icon
     { day: 'Tuesday', temperature: 25, icon: '🌤️' },   // Sun behind cloud icon
