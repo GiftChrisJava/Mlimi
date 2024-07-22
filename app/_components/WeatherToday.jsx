@@ -110,25 +110,6 @@ export default function WeatherToday({ city }) {
         <h2 className="text-lg font-medium">Weather Advice</h2>
         <p className="text-gray-700">{getWeatherAdvice()}</p>
       </div>
-
-      {/* <div className="bg-white shadow-lg rounded-lg p-4 w-full max-w-3xl mt-4">
-        <h2 className="text-lg font-medium">Weekly Forecast</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {weeklyWeatherData.daily.map((day, index) => (
-            <div key={index} className="bg-white shadow-md rounded-lg p-4">
-              <div className="text-gray-700 text-lg">
-                <strong>{new Date(day.dt * 1000).toLocaleDateString()}</strong>
-              </div>
-              <div className="text-gray-700 text-lg">
-                {((day.temp.day - 32) * 5 / 9).toFixed(1)}°C
-              </div>
-              <div className="text-gray-700 text-sm capitalize">
-                {day.weather[0].description}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div> */}
     </main>
   );
 }
