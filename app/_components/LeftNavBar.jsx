@@ -1,3 +1,5 @@
+"use client"
+
 import { CheckSquare, Cloud, Search, LeafIcon, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 

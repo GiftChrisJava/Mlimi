@@ -1,4 +1,6 @@
 // components/layout.js
+"use client"
+
 import LeftNavBar from './LeftNavBar';
 import RightSideNavBar from './RightSideNavBar';
 import { useState } from 'react';
