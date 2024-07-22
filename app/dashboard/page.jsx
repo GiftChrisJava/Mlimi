@@ -12,6 +12,7 @@ import CropMonitoring from '../_components/CropMonitoring';
 import RightSideNavBar from '../_components/RightSidebar';
 import SignUpForm from '../_components/Register';
 import store from 'store2';
+import { Loader } from 'lucide-react'; // Import the loader spinner from lucide-react
 
 export default function Home() {
   const [weatherData, setWeatherData] = useState(null);
@@ -19,7 +20,6 @@ export default function Home() {
   const [formData, setFormData] = useState(null);
   const [isSignIn, setIsSignIn] = useState(true); // State to toggle between SignIn and SignUp
   const router = useRouter();
-  // const searchParams = useSearchParams();
   let city = store.get("city");
 
   useEffect(() => {
@@ -29,7 +29,16 @@ export default function Home() {
     }
   }, [city]);
 
-  if (!weatherData) return <div> city value is {city} Loading...</div>;
+  if (!weatherData) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-center">
+          <div>city value is {city}</div>
+          <Loader className="animate-spin" size={48} />
+        </div>
+      </div>
+    );
+  }
 
   const handleFormSave = (data) => {
     setFormData(data);
