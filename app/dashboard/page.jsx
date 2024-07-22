@@ -22,21 +22,24 @@ export default function Home() {
 
   useEffect(() => {
     if (city) {
-      console.log("city is " +  city);
-      fetchWeatherData(city).then(data => setWeatherData(data));
+      console.log("City is:", city);
+      fetchWeatherData(city).then(data => {
+        console.log("Weather data:", data);
+        setWeatherData(data);
+      });
     }
   }, [city]);
 
-  // if (!weatherData) {
-  //   return (
-  //     <div className="flex justify-center items-center h-screen">
-  //       <div className="text-center">
-  //         <div>city value is {city}</div>
-  //         <Loader className="animate-spin" size={48} />
-  //       </div>
-  //     </div>
-  //   );
-  // }
+  if (!weatherData) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="text-center">
+          <div>City value is: {city}</div>
+          <Loader className="animate-spin" size={48} />
+        </div>
+      </div>
+    );
+  }
 
   const handleFormSave = (data) => {
     setFormData(data);
