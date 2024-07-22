@@ -1,14 +1,14 @@
 "use client"
 import axios from 'axios';
 
-const API_KEY = '8976a318109bf631f6afef1f7e704867'; // Make sure this API key is correct
+const keyToUse = '8976a318109bf631f6afef1f7e704867';
 
 export async function fetchWeatherData(city) {
   try {
     const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather`, {
       params: {
         q: city,
-        appid: API_KEY,
+        appid: keyToUse,
         units: 'imperial'
       }
     });
@@ -28,7 +28,7 @@ export async function fetchWeeklyWeatherData(lat, lon) {
         lat: lat,
         lon: lon,
         exclude: 'hourly,minutely',
-        appid: API_KEY,
+        appid: keyToUse,
         units: 'imperial'
       }
     });
