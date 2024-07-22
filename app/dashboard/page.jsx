@@ -1,6 +1,6 @@
 "use client"
 import { useState, useEffect } from 'react';
-import { fetchWeatherData } from '../lib/fetchWeather';
+import { fetchWeatherData } from '../_fetchWeather/fetchWeather';
 import LeftNavBar from '../_components/LeftNavBar';
 import WeatherToday from '../_components/WeatherToday';
 import CropRecommendationForm from '../_components/CropRecommendationForm';

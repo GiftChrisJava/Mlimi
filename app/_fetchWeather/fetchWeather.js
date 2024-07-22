@@ -1,3 +1,4 @@
+"use client"
 import axios from 'axios';
 
 const API_KEY = '8976a318109bf631f6afef1f7e704867'; // Make sure this API key is correct

@@ -1,6 +1,7 @@
+"use client"
 import { useState, useEffect } from 'react';
 import { Thermometer, Wind, Droplet, Cloud } from 'lucide-react';
-import { fetchWeatherData } from '../lib/fetchWeather';
+import { fetchWeatherData } from '../_fetchWeather/fetchWeather';
 
 export default function WeatherToday({ city }) {
   const [weatherData, setWeatherData] = useState(null);
