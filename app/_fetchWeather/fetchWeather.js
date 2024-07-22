@@ -1,15 +1,15 @@
 "use client"
 import axios from 'axios';
 
-const apiKey = process.env.NEXT_PUBLIC_WEATHERAPI_KEY; // Ensure this API key is correctly set
+const apiKey = process.env.NEXT_PUBLIC_API_KEY; // Make sure this API key is correct
 
 export async function fetchWeatherData(city) {
   try {
-    const response = await axios.get(`http://api.weatherapi.com/v1/current.json`, {
+    const response = await axios.get(`http://api.openweathermap.org/data/2.5/weather`, {
       params: {
-        key: apiKey,
         q: city,
-        aqi: 'no'
+        appid: apiKey,
+        units: 'imperial'
       }
     });
     
@@ -23,13 +23,13 @@ export async function fetchWeatherData(city) {
 
 export async function fetchWeeklyWeatherData(lat, lon) {
   try {
-    const response = await axios.get(`http://api.weatherapi.com/v1/forecast.json`, {
+    const response = await axios.get(`http://api.openweathermap.org/data/2.5/onecall`, {
       params: {
-        key: apiKey,
-        q: `${lat},${lon}`,
-        days: 7,
-        aqi: 'no',
-        alerts: 'no'
+        lat: lat,
+        lon: lon,
+        exclude: 'hourly,minutely',
+        appid: apiKey,
+        units: 'imperial'
       }
     });
     
