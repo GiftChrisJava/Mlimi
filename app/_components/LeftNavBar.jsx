@@ -5,11 +5,12 @@ import Link from 'next/link';
 
 export default function LeftNavBar({ selectedOption, setSelectedOption }) {
   const menuItems = [
-    { label: "Weather Forecasting", icon: Cloud, value: 'weather' },
     { label: "Personalized Recommendation", icon: Cloud, value: 'personal' },
     { label: 'Crop Recommendation', icon: CheckSquare, value: 'crop' },
     { label: 'Seed Quality', icon: Search, value: 'seed' },
     { label: 'Plant Monitor', icon: LeafIcon, value: 'plant' },
+    { label: "Weather Forecasting", icon: Cloud, value: 'weather' },
+
   ];
 
   return (
